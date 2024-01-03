@@ -1,0 +1,2 @@
+converter
+-DCATKIN_DEVEL_PREFIX=/home/coolpi/work/openvins/converter/devel -DCMAKE_INSTALL_PREFIX=/home/coolpi/work/openvins/converter/install -G Unix Makefiles
