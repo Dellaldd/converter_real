@@ -56,13 +56,13 @@ class ImuConver{
         }
 
         void imu_rawCallback(const sensor_msgs::ImuConstPtr& msg){
-            imu_raw_acc[0] = msg->linear_acceleration.x/scale*1.953125;
-            imu_raw_acc[1] = msg->linear_acceleration.y/scale*1.953125;
-            imu_raw_acc[2] = msg->linear_acceleration.z/scale*1.953125;
+            imu_raw_acc[0] = msg->linear_acceleration.x/1000.0;
+            imu_raw_acc[1] = msg->linear_acceleration.y/1000.0;
+            imu_raw_acc[2] = msg->linear_acceleration.z/1000.0;
 
-            imu_raw_gyro[0] = msg->angular_velocity.x * 17.4532925;
-            imu_raw_gyro[1] = msg->angular_velocity.y * 17.4532925;
-            imu_raw_gyro[2] = msg->angular_velocity.z * 17.4532925;
+            imu_raw_gyro[0] = msg->angular_velocity.x/1000.0;
+            imu_raw_gyro[1] = msg->angular_velocity.y/1000.0;
+            imu_raw_gyro[2] = msg->angular_velocity.z/1000.0;
 
             imu_full.header = msg->header;
 
@@ -70,9 +70,9 @@ class ImuConver{
             imu_full.angular_velocity.y = imu_raw_gyro[1];
             imu_full.angular_velocity.z = imu_raw_gyro[2];//rad/s
 
-            imu_full.linear_acceleration.x = imu_raw_acc[0]*9.80665;
-            imu_full.linear_acceleration.y = imu_raw_acc[1]*9.80665;
-            imu_full.linear_acceleration.z = imu_raw_acc[2]*9.80665; //g
+            imu_full.linear_acceleration.x = imu_raw_acc[0];
+            imu_full.linear_acceleration.y = imu_raw_acc[1];
+            imu_full.linear_acceleration.z = imu_raw_acc[2]; //g
 
             // imu_full.angular_velocity.x = filter_angular_1.update_angular(imu_raw_gyro[0]);
             // imu_full.angular_velocity.y = filter_angular_2.update_angular(imu_raw_gyro[1]);

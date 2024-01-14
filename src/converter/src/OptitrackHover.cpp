@@ -130,7 +130,7 @@ class ImuConver{
             imu_mag_sub = n.subscribe<sensor_msgs::MagneticField>("/mavros/imu/mag", 140, &ImuConver::magCallback,this);
             imu_raw_sub = n.subscribe<sensor_msgs::Imu>("/mavros/imu/data_raw", 140, &ImuConver::imu_rawCallback,this);
             imu_sub = n.subscribe<sensor_msgs::Imu>("/mavros/imu/data", 140, &ImuConver::imu_Callback,this);
-            optitrack_sub = n.subscribe<geometry_msgs::PoseStamped>("/vrpn_client_node/jiahao2/pose", 15, &ImuConver::optitrack_Callback,this);
+            optitrack_sub = n.subscribe<geometry_msgs::PoseStamped>("/vrpn_client_node/jiahao1/pose", 15, &ImuConver::optitrack_Callback,this);
             imu_state_sub = n.subscribe<sensor_msgs::Imu>("/mavros/imu/full", 140, &ImuConver::imu_state_Callback,this);
         }
 
