@@ -60,9 +60,9 @@ class ImuConver{
             imu_raw_acc[1] = msg->linear_acceleration.y/1000.0;
             imu_raw_acc[2] = msg->linear_acceleration.z/1000.0;
 
-            imu_raw_gyro[0] = msg->angular_velocity.x/1000.0;
-            imu_raw_gyro[1] = msg->angular_velocity.y/1000.0;
-            imu_raw_gyro[2] = msg->angular_velocity.z/1000.0;
+            imu_raw_gyro[0] = msg->angular_velocity.x * 17.4532925 / 10.0;
+            imu_raw_gyro[1] = msg->angular_velocity.y * 17.4532925 / 10.0;
+            imu_raw_gyro[2] = msg->angular_velocity.z * 17.4532925 / 10.0;
 
             imu_full.header = msg->header;
 
@@ -143,7 +143,7 @@ int main(int argc, char *argv[]){
     ros::Publisher imu_full_pub = nh.advertise<sensor_msgs::Imu>("/mavros/imu/full",1);
     ros::Publisher setpoint_pub = nh.advertise<mavros_msgs::PositionTarget>("/mavros/setpoint_raw/local",1);
     
-    ros::Rate loop_rate(140);
+    ros::Rate loop_rate(180);
     imuConver.initial();
     cout << "start convert!" << endl;
     while (ros::ok()){

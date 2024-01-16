@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/coolpi/package/catkin_ws/devel;/home/coolpi/work/vins_uwb_swarm_2/vins_uwb_swarm_2/devel;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/coolpi/work/openvins/converter/devel;/home/coolpi/package/catkin_ws/devel;/home/coolpi/work/vins_uwb_swarm_2/vins_uwb_swarm_2/devel;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

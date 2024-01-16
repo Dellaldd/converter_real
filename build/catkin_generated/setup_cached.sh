@@ -7,7 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/coolpi/work/openvins/converter/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH='/home/coolpi/package/catkin_ws/devel/lib:/home/coolpi/work/vins_uwb_swarm_2/vins_uwb_swarm_2/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/aarch64-linux-gnu'
+export PKG_CONFIG_PATH='/home/coolpi/package/catkin_ws/devel/lib/pkgconfig:/home/coolpi/work/vins_uwb_swarm_2/vins_uwb_swarm_2/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig:/opt/ros/noetic/lib/aarch64-linux-gnu/pkgconfig'
 export PWD='/home/coolpi/work/openvins/converter/build'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/coolpi/work/openvins/converter/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/coolpi/work/openvins/converter/src:$ROS_PACKAGE_PATH"
